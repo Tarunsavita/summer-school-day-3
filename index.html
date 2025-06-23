@@ -1,11 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Responsive webpage</title>
+
+
+    <style>
+        :root {
+            --main-color: rgba(0, 0, 0, 0.8);
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sevillana&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-size: 18px;
+            line-height: 1.6;
+            font-family: sevillana;
+        }
+
+        h1 {
+            font-size: 40px;
+            margin-left: 1rem;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            background-color: var(--main-color);
+            color: white;
+            width: 100%;
+            border-radius: 15px;
+            padding: 1rem 2rem;
+        }
+
+        #navigation {
+            width: 60vw;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-evenly;
+            gap: 2rem;
+
+        }
+
+        a {
+            color: blue;
+            text-decoration: none;
+        }
+
+        #button,
+        h2 {
+            color: white;
+            margin-left: 1rem;
+        }
+
+        #content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: space-evenly;
+            padding: 2rem 1rem;
+            gap: 2rem;
+        }
+
+        img {
+            object-fit: contain;
+            width: 50vw;
+        }
+
+        #article {
+            width: 40vw;
+            overflow-y: auto;
+            max-height: 40vh;
+            margin-top: 2rem;
+        }
+
+        #container {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+        }
+
+        .box {
+            height: 80px;
+            width: 400px;
+            background-color: black;
+            border-radius: 22px;
+            margin: 1rem;
+        }
+
+        .box {
+            background-color: black;
+            transition: background-color 0.5s ease, transform 0.4s ease;
+        }
+
+        .box:hover {
+            background-color: blue;
+            transform: scale(1.05) rotate(3deg);
+        }
+
+        .box1 {
+            animation: slideIn 2s ease-in-out;
+        }
+
+        .box2 {
+            animation: bounce 2s infinite ease-in-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+
+        footer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 70px;
+            width: 99%;
+            border-radius: 15px;
+            background-color: var(--main-color);
+            color: white;
+            bottom: 0px;
+            font-size: 16px;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                font-size: 16px;
+            }
+
+            h1 {
+                font-size: 28px;
+                margin-left: 0;
+            }
+
+            footer {
+                font-size: 14px;
+            }
+
+            #image img,
+            #article {
+                width: 90vw;
+                margin: 0 auto;
+                max-height: none;
+            }
+
+            #main {
+                flex-direction: column;
+                padding: 1rem;
+            }
+
+            #container {
+                flex-direction: column;
+            }
+
+            .box {
+                width: 90vw;
+                margin: 1rem auto;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
+
+            #navigation {
+                flex-direction: column;
+                width: 100%;
+                gap: 1rem;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    
+    <nav>
+        <div id="logo">
+            <a href="#">
+                <h2>Tarun</h2>
+            </a>
+        </div>
+        <div id="navigation">
+            <a href="#">Home</a>
+            <a href="#">About us</a>
+            <a href="#">Work</a>
+            <a href="#">Info</a>
+            <div id="button">
+                <p>Get Started</p>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <section id="content">
+            <div id="image">
+                <img src="https://www.gatevidyalay.com/wp-content/uploads/2019/12/Cubic-Bezier-Curve.png"
+                    alt="Cubic-Bezier-Curve">
+            </div>
+            <div id="article">
+                <h1>Cubic-Bezier-Curve</h1>
+                <p>
+                    A cubic Bezier curve is a parametric curve defined by four points: a start point, an end point, and
+                    two
+                    control points. It runs from the start point towards the first control point and bends to end at the
+                    end
+                    point, with the control points determining the direction of the curve at its ends. Cubic Bezier
+                    curves
+                    are
+                    widely used in computer graphics and animations to create smooth transitions and shapes.
+                    A cubic Bézier curve is a type of parametric curve widely used in computer graphics, UI animations,
+                    and CSS transitions to create smooth, natural-looking motion. It’s defined by four points:
+                    P₀: the starting point of the curve
+                    P₁ and P₂: control points that shape the curve’s direction and bend
+                    P₃: the ending point of the curve
+                    The curve doesn’t pass through the control points (P₁ and P₂), but they influence its shape—like
+                    magnets pulling the curve toward them.
+                <h3>Common Presets</h3>
+                ease: cubic-bezier(0.25, 0.1, 0.25, 1)<br>
+                ease-in: cubic-bezier(0.42, 0, 1, 1)<br>
+                ease-out: cubic-bezier(0, 0, 0.58, 1)<br>
+                ease-in-out: cubic-bezier(0.42, 0, 0.58, 1)<br>
+                </p>
+            </div>
+        </section>
+        <section id="container">
+            <div class="box box1"></div>
+            <div class="box box2"></div>
+        </section>
+    </main>
+    <footer>
+        <h5 align="center">&copy; 2025 Tarun Savita</h5>
+    </footer>
 </body>
+
 </html>
